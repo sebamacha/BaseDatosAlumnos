@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Universidad Nacional</title>
+
+<link rel="stylesheet" href="logincss.css">
+<link rel="icon" href="img/logo.png" type="image/png">
+
+
+</head>
+<body>
+    <div class="login">
+        <div class="login-triangle"></div>
+        
+        <h2 class="login-header">Inicio de Sesión</h2>
+      
+        <form class="login-container">
+          <p><input type="email" placeholder="Email"></p>
+          <p><input type="password" placeholder="Contraseña"></p>
+          <p><input type="submit" value="Iniciar Sesion"></p>
+        </form>
+      </div>
+      <div id="container">
+        <span id="text1"></span>
+        <span id="text2"></span>
+    </div>
+    
+    <!-- The SVG filter used to create the merging effect -->
+    <svg id="filters">
+        <defs>
+            <filter id="threshold">
+                <!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
+                <feColorMatrix in="SourceGraphic"
+                        type="matrix"
+                        values="1 0 0 0 0
+                                        0 1 0 0 0
+                                        0 0 1 0 0
+                                        0 0 0 255 -140" />
+            </filter>
+        </defs>
+    </svg>
+    <div id="logo" style="margin-top: 100px;"  >
+        <img src="img/logo.png" alt="">
+    </div>
+    
+    
+    <script src="loginjs.js"></script>
+</body>
+</html>

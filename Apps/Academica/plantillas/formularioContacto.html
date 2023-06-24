@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Contacto</title>
+</head>
+<body>
+  <h1> Contacto</h1> 
+  <!-- formulario de contacto  -->
+  <form action="{% url 'contactar' %}" method="POST">{% csrf_token %} 
+    <!-- paquete django auntentica la url, sea autentico y no malisicioso -->
+    <p>Correo: <input type="email" name="txtEmail"></p>
+    <p>Asunto: <input type="text" name="txtAsunto"></p>
+    <p>
+        Mensaje: 
+        <textarea name="txtMensaje" cols="30" rows="5" style="resize: none;"></textarea>
+    </p>
+    <input type="submit" value="Enviar"/>
+  </form>
+</body>
+</html>
