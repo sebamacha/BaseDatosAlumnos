@@ -1,17 +1,28 @@
 from django.shortcuts import render
 from django.conf import settings
 from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
 
-# Create your views here.
-#creacion de la vista formulario con el request
 
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            pass
+    return render(request, 'login.html')
+
+
+
+def home(request):
+    return render(request, 'home.html')
 def formularioContacto(request):
     return render(request, "formularioContacto.html")
-    #render me indica la respuesta a traves de esa peticion
-    #devuelve el formulario contacto
-
-
-#vista para recibir datos del formulario recibido
 def contactar(request):
     if request.method=="POST":
         asunto = request.POST["txtAsunto"]

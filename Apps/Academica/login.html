@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceso Universidad Nacional</title>
 
-<link rel="stylesheet" href="logincss.css">
+<link rel="stylesheet" href="./static/Academica/css/logincss.css">
 <link rel="icon" href="img/logo.png" type="image/png">
 
 
@@ -16,11 +16,14 @@
         
         <h2 class="login-header">Inicio de Sesión</h2>
       
-        <form class="login-container">
-          <p><input type="email" placeholder="Email"></p>
-          <p><input type="password" placeholder="Contraseña"></p>
-          <p><input type="submit" value="Iniciar Sesion"></p>
+        <form class="login-container" action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <p><input type="text" name="username" placeholder="Usuario"></p>
+            <p><input type="password" name="password" placeholder="Contraseña"></p>
+            <p><input type="submit" value="Iniciar Sesion"></p>
         </form>
+        
+        
       </div>
       <div id="container">
         <span id="text1"></span>
@@ -46,6 +49,6 @@
     </div>
     
     
-    <script src="loginjs.js"></script>
+    <script src="./static/Academica/js/loginjs.js"></script>
 </body>
 </html>

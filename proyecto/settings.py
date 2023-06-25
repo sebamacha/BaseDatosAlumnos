@@ -55,7 +55,7 @@ ROOT_URLCONF = 'proyecto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:\PRACTICAS\PYTHON\Django\TpoUniversidad\Apps\Academica\plantillas'],
+        'DIRS': ['D:/PRACTICAS/PYTHON/Django/TpoUniversidad/Apps/Academica'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
