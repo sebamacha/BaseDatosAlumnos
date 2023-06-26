@@ -3,9 +3,16 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
+@login_required
+def home(request):
+    return render(request, 'home.html')
 
 def login_view(request):
+    error = ''
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -14,15 +21,12 @@ def login_view(request):
             login(request, user)
             return redirect('home')
         else:
-            pass
-    return render(request, 'login.html')
+            error = 'Nombre de usuario o contraseña incorrectos'
+    return render(request, 'login.html', {'error': error})
 
-
-
-def home(request):
-    return render(request, 'home.html')
 def formularioContacto(request):
     return render(request, "formularioContacto.html")
+
 def contactar(request):
     if request.method=="POST":
         asunto = request.POST["txtAsunto"]

@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso Universidad Nacional</title>
-
-<link rel="stylesheet" href="./static/Academica/css/logincss.css">
-<link rel="icon" href="img/logo.png" type="image/png">
-
-
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acceso Estados de estudiantes Universidad Nacional</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+    crossorigin="anonymous"
+  />
+  <!-- link cdn bootstrap -->
+    <link rel="stylesheet" href="./static/Academica/css/logincss.css" />
+    <link rel="icon" href="./plantillas/img/logo.png" type="image/png" />
+  </head>
+  <body class="bg-secondary" >
     <div class="login">
-        <div class="login-triangle"></div>
+      <div class="login-triangle"></div>
+
+      <h2 class="login-header">Consulta estado Estudiantes</h2>
+      {% if error %}
+      <p style="color: aliceblue;" >{{ error }}</p>
+      {% endif %}
+      <form class="login-container" action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+
+        <p><input type="text" name="username" placeholder="Usuario" /></p>
+        <br />
+
+        <p>
+          <input type="password" name="password" placeholder="Contraseña" />
+        </p>
+        <br />
+        <p><input type="submit" value="Iniciar Sesion" /></p>
         
-        <h2 class="login-header">Inicio de Sesión</h2>
-      
-        <form class="login-container" action="{% url 'login' %}" method="post">
-            {% csrf_token %}
-            <p><input type="text" name="username" placeholder="Usuario"></p>
-            <p><input type="password" name="password" placeholder="Contraseña"></p>
-            <p><input type="submit" value="Iniciar Sesion"></p>
-        </form>
-        
-        
-      </div>
-      <div id="container">
-        <span id="text1"></span>
-        <span id="text2"></span>
+      </form>
     </div>
-    
+    <div id="container">
+      <span id="text1"></span>
+      <span id="text2"></span>
+    </div>
+
     <!-- The SVG filter used to create the merging effect -->
     <svg id="filters">
-        <defs>
-            <filter id="threshold">
-                <!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
-                <feColorMatrix in="SourceGraphic"
-                        type="matrix"
-                        values="1 0 0 0 0
+      <defs>
+        <filter id="threshold">
+          <!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="1 0 0 0 0
                                         0 1 0 0 0
                                         0 0 1 0 0
-                                        0 0 0 255 -140" />
-            </filter>
-        </defs>
+                                        0 0 0 255 -140"
+          />
+        </filter>
+      </defs>
     </svg>
-    <div id="logo" style="margin-top: 100px;"  >
-        <img src="img/logo.png" alt="">
+    <div id="logo" style="margin-top: 100px">
+      <img src="./static/Academica/img/logo.png" alt="" />
     </div>
-    
-    
+
     <script src="./static/Academica/js/loginjs.js"></script>
-</body>
+    <footer style="color: white; background-color: black; width: 100vw; height: 28px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; position: fixed; bottom: 0;">
+        &copy; 2023 Sebastian macharette. Todos los derechos reservados.
+      </footer>
+      
+  </body>
 </html>

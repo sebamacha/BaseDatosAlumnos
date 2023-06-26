@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 body {
-  background: #456;
+  background: rgb(196, 208, 219);
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -91,8 +91,8 @@ body {
 /*marquesina de la universidad */
 #container {
 	/* Center the text in the viewport. */
-	position: absolute;
-	margin: auto;
+	position:fixed;
+	margin-top: 480px;
 	width: 100vw;
 	height: 80pt;
 	top: 0;
@@ -129,3 +129,4 @@ body {
         width: 20%;
     }
 }
+
