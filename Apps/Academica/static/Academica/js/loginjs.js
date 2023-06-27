@@ -15,7 +15,7 @@ const texts = [
 	"Tenemos todas",
 	"las carreras ",
 	"a tu",
-	"alcanse..."
+	"alcance..."
 ];
 
 // Controls the speed of morphing.
