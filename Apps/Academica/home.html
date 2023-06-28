@@ -15,7 +15,7 @@
     />
     <!-- link cdn bootstrap -->
   </head>
-  <body class="bg-secondary">
+  <body class="--bs-body-color">
     <!-- barra de navegacion bootstrap -->
     <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">
@@ -34,6 +34,38 @@
     <!-- ------------------- fin de barra ----------------- -->
 
     <h1>home</h1>
+    <ul>
+      <h1>Estudiantes</h1>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>DNI</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Nombre</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Sexo</th>
+            <th>Carrera</th>
+            <th>Vigencia</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in estudiante %}
+          <tr>
+            <td>{{ c.dni }}</td>
+            <td>{{ c.apellidoPeterno }}</td>
+            <td>{{ c.apellidoMaterno }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.fechaNacimiento }}</td>
+            <td>{{ c.sexo }}</td>
+            <td>{{ c.carrera }}</td>
+            <td>{{ c.vigencia }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </ul>
 
     <!-- js local propio -->
     <script src="./static/Academica/js/home.js"></script>

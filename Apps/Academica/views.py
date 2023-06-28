@@ -6,10 +6,13 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from .models import Estudiante
+
 
 @login_required
 def home(request):
-    return render(request, 'home.html')
+    estudiante = Estudiante.objects.all()
+    return render(request, 'home.html', {"estudiante":estudiante})
 
 def login_view(request):
     error = ''
