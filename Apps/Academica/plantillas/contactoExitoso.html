@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <title>Formulario Enviado</title>
+    <link rel="stylesheet" href="../static/Academica/css/enviado.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <!-- link cdn bootstrap -->
 </head>
-<body>
-    <h1>Fomulario de contacto enviado con exito</h1>
+<body" >
+    <div id="nav" class="container-fluid">
+        <a class="navbar-brand"></a>
+        <form class="d-flex ms-auto" role="search">
+            <button class="btn btn-primary me-2" type="button" onclick="goToHome()">Inicio</button>
+            <script>
+                function goToHome() {
+                    window.location.href = '/home/';
+                }
+            </script>
+            <button class="btn btn-success me-2" type="button" onclick="goToAdmin()">Administrador</button>
+            <script>
+                function goToAdmin() {
+                    window.location.href = 'http://127.0.0.1:8000/admin/';
+                }
+            </script>
+            <a class="btn btn-danger" href="{% url 'logout' %}">Cerrar sesión</a>
+        </form>
+    </div>
+
+    <img class="img" src="../static/Academica/img/formulario enciado.png" alt="">
 </body>
 </html>
