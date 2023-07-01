@@ -69,3 +69,4 @@ class Matricula (models.Model):
         fecMat = self.fechaMatricula.strftime("%A %d/%m/%Y %H:%M:%S")     
         return txt.format(self.estudiante.nombreCompleto(), letraSexo, self.curso , fecMat )
         
+    
