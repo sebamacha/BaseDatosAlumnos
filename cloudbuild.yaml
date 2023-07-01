@@ -10,5 +10,5 @@ steps:
   args: ['run', 'deploy', 'mi-servicio', '--image', 'gcr.io/$PROJECT_ID/mi-app', '--region', 'southamerica-east1']
 
 timeout: '1200s'
-logsBucket: 'gs://mi-bucket-de-registros'
+logsBucket: '_Default'
 serviceAccount: 'mi-cuenta-de-servicio@mi-proyecto.iam.gserviceaccount.com'
