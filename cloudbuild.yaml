@@ -1,12 +1,14 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/academica', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/mi-app', '.']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/academica']
+  args: ['push', 'gcr.io/$PROJECT_ID/mi-app']
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'servicio-academico', '--image', 'gcr.io/$PROJECT_ID/academica', '--region', 'southamerica-east1']
+  args: ['run', 'deploy', 'mi-servicio', '--image', 'gcr.io/$PROJECT_ID/mi-app', '--region', 'southamerica-east1']
 
 timeout: '1200s'
+logsBucket: 'gs://mi-bucket-de-registros'
+serviceAccount: 'mi-cuenta-de-servicio@mi-proyecto.iam.gserviceaccount.com'
