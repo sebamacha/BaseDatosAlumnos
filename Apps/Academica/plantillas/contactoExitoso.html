@@ -15,24 +15,25 @@
     <!-- link cdn bootstrap -->
 </head>
 <body" >
-    <div id="nav" class="container-fluid">
-        <a class="navbar-brand"></a>
-        <form class="d-flex ms-auto" role="search">
-            <button class="btn btn-primary me-2" type="button" onclick="goToHome()">Inicio</button>
-            <script>
-                function goToHome() {
-                    window.location.href = '/home/';
-                }
-            </script>
-            <button class="btn btn-success me-2" type="button" onclick="goToAdmin()">Administrador</button>
-            <script>
-                function goToAdmin() {
-                    window.location.href = 'http://127.0.0.1:8000/admin/';
-                }
-            </script>
-            <a class="btn btn-danger" href="{% url 'logout' %}">Cerrar sesión</a>
-        </form>
-    </div>
+<div id="nav" class="container-fluid">
+    <a class="navbar-brand"></a>
+    <form class="d-flex justify-content-end" role="search">
+      <button class="btn btn-primary me-2" type="button" onclick="goToHome()">Inicio</button>
+      <script>
+        function goToHome() {
+          window.location.href = '/home/';
+        }
+      </script>
+      <button class="btn btn-success me-2" type="button" onclick="goToAdmin()">Administrador</button>
+      <script>
+        function goToAdmin() {
+          window.location.href = 'http://127.0.0.1:8000/admin/';
+        }
+      </script>
+      <a class="btn btn-danger" href="{% url 'logout' %}">Cerrar sesión</a>
+    </form>
+  </div>
+  
 
     <img class="img" src="../static/Academica/img/formulario enciado.png" alt="">
 </body>
